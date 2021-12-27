@@ -15,4 +15,9 @@
             {{ form.submit() }}
         </p>
     </form>
+    <hr>
+    <h3>Previous Notes</h3>
+    {% if note %}
+        <p>{{ note.note }}</p>
+    {% endif %}
 {% endblock %}
