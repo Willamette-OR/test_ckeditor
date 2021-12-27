@@ -15,9 +15,11 @@
             {{ form.submit() }}
         </p>
     </form>
+    {{ ckeditor.load(pkg_type="basic") }}
+    {{ ckeditor.config(name='body') }}
     <hr>
     <h3>Previous Notes</h3>
     {% if note %}
-        <p>{{ note.note }}</p>
+        <p>{{ note.note|safe }}</p>
     {% endif %}
 {% endblock %}
