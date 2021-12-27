@@ -2,5 +2,17 @@
 
 
 {% block content %}
-    <p>Hello world!</p>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.note.label }}<br>
+            {{ form.note(cols=50, rows=4) }}<br>
+            {% for error in form.note.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
 {% endblock %}
